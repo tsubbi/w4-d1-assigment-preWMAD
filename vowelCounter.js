@@ -2,8 +2,20 @@
 // one potential solution may use the charAt() method, but this isnt the only solution
 // you may alsop find the .contains() method useful.
 //another useful couple of methods could be .split and .join
+const isVowel = function(char) {
+  return ("aeoiu".indexOf(char) != -1);
+}
+
 const vowelCounter = function(data) {
     // Put your solution here
+    let cnt = 0;
+    for (i = 0; i < data.length; i++) {
+      if (isVowel(data[i])) {
+        cnt++;
+      }
+    }
+
+    return cnt;
 };
   
   console.log(vowelCounter("orange"));
