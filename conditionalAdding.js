@@ -1,9 +1,36 @@
 // write a function that returns the sum of all the numbers that are either 'even', or 'odd'
 // if not enough numbers return "Improper Input"
 
+const isEven = function(num) {
+  return num % 2 === 0;
+}
+
 const conditionalAdding = function(values, condition) {
-    // Your code here
-  };
+  if (values.length < 1) {
+    return "improper input";
+  }
+
+  let result = 0;
+
+  for (i = 0; i < values.length; i++) {
+    switch (condition) {
+      case "even":
+        if (isEven(values[i])) {
+          result += values[i];
+        }
+        break;
+      case "odd":
+        if (!isEven(values[i])) {
+          result += values[i];
+        }
+        break;
+      default:
+        break;
+    }
+  }
+
+  return result;
+};
   
   console.log(conditionalAdding([1, 2, 3, 4, 5], "even"));
   // should return 6
